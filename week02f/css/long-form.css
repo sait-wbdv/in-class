@@ -1,0 +1,16 @@
+/* CSS is for Presentation */
+
+/* TODO: Limit the max width of the page. */
+
+img {
+  margin-left: 20px;
+  padding: 25px;
+  padding-bottom: 75px;
+  
+  border: 1px solid black;
+  border-radius: 5px;
+  
+  background: papayawhip;
+  
+  float: right;
+}
