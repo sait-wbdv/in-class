@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Starter</title>
+  <!-- Make it pretty -->
+  <link rel="stylesheet" href="../css/main.css">
+
+  <!-- Your code here -->
+  <style>
+    img {
+      width: 25vw;
+    }
+
+
+    div {
+      width: 496px;
+      height: 400px;
+
+      background-image: url('images/no-beer.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Using classes in your inline SVG change the fill color so that the SVG is presented with two or more colours. How else can you style SVGs? */
+    .beer-mug {
+      fill: rebeccapurple;
+    }
+    .blur {
+      filter: blur(5px);
+    }
+
+
+    /* Make it pretty */
+    button {
+      /* Make the button bigger, and more... buttony */
+      padding: .5rem 1rem;
+      margin: 1rem;
+      border-radius: 1rem;
+      
+      /* Try to make boring fonts look less boring. */
+      font-size: 1.5rem;
+      font-family: MS Sans Serif, Geneva, sans-serif;
+      font-variant: small-caps;
+      
+      /* By default, buttons don't get the pointy hand when you hover. */
+      cursor: pointer;
+    }
+
+
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- Insert as inline `svg` element -->
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="-25 -25 546 546">
+      <path class="beer-mug purple" d="M138 192v187c0 8.284 6.716 15 15 15h170c4.651 0 8.808-2.117 11.56-5.44L276 330a9.983 9.983 0 01-8 4c-5.522 0-10-4.478-10-10v-12l-40-40v52c0 5.522-4.478 10-10 10s-10-4.478-10-10v-72l-60-60zM278 224v-40c0-5.523-4.478-10-10-10s-10 4.477-10 10v20l-90-90h155c8.284 0 15 6.716 15 15v25h30c27.57 0 50 22.43 50 50v80.537c0 19.705-11.628 37.627-29.621 45.659l-2.892 1.291-30.286-30.286 16.875-7.532a10.007 10.007 0 005.924-9.132V204c0-5.514-4.486-10-10-10h-30v90l-60-60z" fill="forestgreen"/>
+      <path class="ban" d="M248 0C111.034 0 0 111.033 0 248c0 136.967 111.034 248 248 248s248-111.034 248-248S384.967 0 248 0zm130.108 117.892c65.448 65.448 70 165.481 20.677 235.637L142.47 97.216c70.204-49.356 170.226-44.735 235.638 20.676zM117.892 378.108c-65.448-65.448-70-165.481-20.677-235.637L353.53 398.784c-70.203 49.356-170.226 44.736-235.638-20.676z" fill="#900"/>
+    </svg>
+    <button>Blur Me!</button>
+
+    <!-- Indentify and label the important bits with classes. -->
+  </main>
+  <script>
+    // path element containing beer mug icon
+    const beerMug = document.querySelector('.beer-mug');
+    // button to toggle the .blur class on beer mug
+    const button = document.querySelector('button');
+
+    button.addEventListener('click',function(){ 
+      // This code will run any time the button is clicked.
+      console.log('Hello Button!');
+
+      // Toggle .blur
+      beerMug.classList.toggle("blur");
+
+    });
+    
+  </script>
+</body>
+</html>
