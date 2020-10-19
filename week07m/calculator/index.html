@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adding Machine</title>
+</head>
+<body>
+  <form id="calculator" action="#something">
+    <fieldset>
+      <legend>Enter two numbers to add:</legend>
+      <div class="wrapper">
+        <div>
+          <label for="num1">First Number</label>
+          <input type="number" name="num1" id="num1" placeholder="Num 1" step=".01" required>
+        </div>
+        <div>
+          <label for="num2">Second Number</label>
+          <input type="number" name="num2" id="num2" placeholder="Num 2" step=".01" required>
+        </div>
+        <div>
+          <label for="operation">Operation</label>
+          <select name="operation" id="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit">Calculate</button>
+    </fieldset>
+  </form>
+  <p>Hello world!</p>
+  <script>
+    const form = document.querySelector('form');
+    const paragraph = document.querySelector('p');
+    
+    function formHandler(event) {
+      event.preventDefault();
+
+      // The result of the calculation
+      let result;
+      // Some grammatical glue to make "proper" English
+      let glue;
+
+      const operation = form.operation.value;
+      // Add if/then blocks to conditionally operate on num1 and num2 depending on the option selected in the `select` menu
+
+      // if add
+      if (operation === 'add') {
+        console.log('added');
+        form.num1.value // string
+        result = 0;
+
+      } else if (operation === 'subtract') {
+        // else if subtract
+        console.log('subtracted');
+
+      } else if (operation === 'multiply') {
+        // else if multiply
+        console.log('multiplied');
+
+      } else if (operation === 'divide') {
+        // else if divide
+        console.log('divided');
+
+      } else {
+        // else... uh oh
+        console.log('invalid operation');
+      }
+
+      // Objective 2: Using string literals, print a statement in the following format:
+      // `[number 1] [multiplied by|plus|minus|divided by] [number 2] equals [result]`
+      
+
+      // Side code: testing for (not) undefined
+      if (result || parseInt(result) === 0) {
+        // This code should only run when result is not `undefined`
+        console.log('result is not undefined');
+      }
+
+    }
+
+    form.addEventListener('submit', formHandler);
+
+  </script>
+</body>
+</html>

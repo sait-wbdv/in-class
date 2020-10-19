@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator</title>
+  
+</head>
+<body>
+  <form id="tip-calculator" action="#something">
+    <fieldset>
+      <legend>Enter the bill total and the tip percentage you'd like to use:</legend>
+      <div class="wrapper">
+        <div>
+          <label for="num1">Bill Total</label>
+          <input type="number" name="total" id="num1" placeholder="Enter your bill total" step=".01" >
+        </div>
+        <div>
+          <label for="num2">Tip Percentage</label>
+          <input type="number" name="percentage" id="num2" placeholder="Enter your tip rate">%
+        </div>
+      </div>
+      <button type="submit">Calculate</button>
+    </fieldset>
+  </form>
+  <h2>Hello world!</h2>
+  <script>
+    const form = document.querySelector('form');
+    const heading = document.querySelector('h2');
+    
+    function tipCalculator(event) {
+      event.preventDefault();
+
+      // The result of the calculation
+      let tipAmount;
+
+      const billTotal = parseInt(form.total.value);
+      const tipRate = parseInt(form.percentage.value);
+
+      tipAmount = billTotal * (tipRate / 100);
+      
+      
+      console.log(typeof billTotal);
+      console.log(typeof billTotal);
+
+      heading.innerHTML = `${tipRate}% on a bill total of $${billTotal.toFixed(2)} is $${tipAmount.toFixed(2)}`;
+    }
+
+    form.addEventListener('submit', tipCalculator);
+
+  </script>
+</body>
+</html>
