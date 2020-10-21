@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery with forEach</title>
+  <style>
+    /* Make it pretty */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .gallery img {
+      margin: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <main class="gallery">
+    <!-- The gallery will go here. -->
+  </main>
+  <script>
+    // A list of pre-selected animals from Lorem Picsum
+    const animals = [
+      'Puppy',
+      'Bear',
+      'Moose',
+      'Coyote',
+      'Tiger',
+      'Husky',
+      'Wolf',
+      'Monkey',
+      'Elk',
+      'Bulldog',
+      'Bird',
+      'Pug',
+      'Big Cat',
+      'Walrus',
+      'Jelly Fish'
+    ]; 
+
+    // Create a variable where we will store the html that will eventually be printed to the page
+    let output = '';
+    
+    // Using `document.querySelector()`, assign the .gallery element to a variable.
+    const gallery = document.querySelector('.gallery');
+    
+    // Loop through `animal` using `array.forEach()`. 
+    animals.forEach(function(animal) {
+      output += `\t<li>${animal.toLowerCase()}</li>\n`;
+    });
+        
+    // Using element.innerHTML, add the html img list to the .gallery variable you created earlier.
+    gallery.innerHTML = `<ul>\n${output}\n</ul>`;
+
+  </script>
+</body>
+</html>
