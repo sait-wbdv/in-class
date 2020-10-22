@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON API: Outputting a single object to innerHTML</title>
+  <style>
+    main {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    blockquote {
+      max-width: 30ch;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Quote goes here -->
+  </main>
+  <script>
+    // Execution phase begins after Creation Phase
+    // Javascript engine starts an Execution Stack for the following code.
+    console.log('Done executing. The execution stack is now empty.');
+    const main = document.querySelector('main');
+
+    fetch('https://api.quotable.io/random')
+
+      .then(function(response) {
+        console.log(response);
+        // json -> javascript object
+        return response.json();
+      })
+
+      .then(function(data) {
+        console.log(data);
+        // Our code goes here
+        outputHTML = `<blockquote>${data.content}<address>-- ${data.author}</address></blockquote>`;
+
+        main.innerHTML = outputHTML;
+      });
+  
+    console.log('Done executing. The execution stack is now empty.');  
+  </script>
+</body>
+</html>
