@@ -1,0 +1,49 @@
+nav {
+  display: flex;
+}
+
+nav ul {
+  margin-left: auto;
+}
+
+nav {
+  margin-bottom: 2rem;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  display: flex;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: $colour1;
+
+  border: 1px solid grey;
+
+  display: block;
+  padding: 0.5em 1em;
+}
+
+nav ul a:hover {
+  background-color: $colour1;
+  color: $colour2;
+}
+
+nav ul a:active {
+  background-color: $colour2;
+  color: $colour1;
+}
+
+nav ul a.current {
+  background-color: $colour2;
+  color: $colour1;
+}

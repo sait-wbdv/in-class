@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&family=Raleway:wght@300;400&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Font */
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 24px;
+  font-variant: small-caps;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+nav {
+  display: flex;
+}
+
+nav ul {
+  margin-left: auto;
+}
+
+nav {
+  margin-bottom: 2rem;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #330066;
+  border: 1px solid grey;
+  display: block;
+  padding: 0.5em 1em;
+}
+
+nav ul a:hover {
+  background-color: #330066;
+  color: #ffff99;
+}
+
+nav ul a:active {
+  background-color: #ffff99;
+  color: #330066;
+}
+
+nav ul a.current {
+  background-color: #ffff99;
+  color: #330066;
+}

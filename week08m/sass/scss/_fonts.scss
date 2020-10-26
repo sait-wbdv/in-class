@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Raleway:wght@300;400&display=swap');
+
+/* Font */
+body {
+  font-family: $body-ff;
+  font-size: 24px;
+  font-variant: small-caps;  
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-ff;
+  font-weight: 300;
+}
