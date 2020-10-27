@@ -23,17 +23,11 @@ h1, h2, h3, h4, h5, h6 {
 
 nav {
   display: flex;
-}
-
-nav ul {
-  margin-left: auto;
-}
-
-nav {
   margin-bottom: 2rem;
 }
 
 nav ul {
+  margin-left: auto;
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
@@ -58,12 +52,7 @@ nav ul a:hover {
   color: #ffff99;
 }
 
-nav ul a:active {
-  background-color: #ffff99;
-  color: #330066;
-}
-
-nav ul a.current {
+nav ul a:active, nav ul a.current {
   background-color: #ffff99;
   color: #330066;
 }
