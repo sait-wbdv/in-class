@@ -12,13 +12,13 @@ const server = http.createServer(function(request,response) {
   // Pull in the :id
   const photoId = params[2];
 
-  console.log(photoId);
-  console.log(parseInt(photoId));
-  console.log(Number.isInteger(parseInt(photoId)));
+  // console.log(photoId);
+  // console.log(parseInt(photoId));
+  // console.log(Number.isInteger(parseInt(photoId)));
 
   if (params[1] === 'photos' && Number.isInteger(parseInt(params[2]))) {
 
-    response.end(`<img src="https://picsum.photos/id/${photoId}/500/500/" alt="Lorem Picsum">`);
+    response.end(`<img src="https://picsum.photos/id/${parseInt(params[2])}/500/500/" alt="Lorem Picsum">`);
 
   } else {
     // Use the `request.url` property to gain access to the endpoint being requested. 
