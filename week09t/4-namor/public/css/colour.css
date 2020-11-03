@@ -1,0 +1,68 @@
+:root {
+  --hue: 0;
+  
+  --lum: 50%;
+  --lum-medium: 50%;
+
+  --lum-very-light: 80%;
+  --lum-light: 70%;
+  --lum-kinda-light: 60%;
+    
+  --lum-kinda-dark: 40%;
+  --lum-dark: 30%;
+  --lum-very-dark: 20%;
+  
+  --sat: 100%;
+  --sat-full: 100%;
+  --sat-washed: 66%;
+  --sat-muted: 33%;
+  --sat-pale: 10%;
+  
+}
+
+body {
+  --hue2-deflect: 0;
+  --hue3-deflect: 0;
+  --hue4-deflect: 0;
+}
+
+body[data-clr-harmony="comp"] {
+  --hue2-deflect: 180;
+  --hue3-deflect: 180;
+  --hue4-deflect: 180;
+}
+
+body[data-clr-harmony="triadic"] {
+  --hue2-deflect: 120;
+  --hue3-deflect: 240;
+  --hue4-deflect: 240;
+}
+
+body[data-clr-harmony="split-comp"] {
+  --hue2-deflect: 150;
+  --hue3-deflect: 210;
+  --hue4-deflect: 210;
+}
+
+body[data-clr-harmony="tetradic"] {
+  --hue2-deflect: 60;
+  --hue3-deflect: 180;
+  --hue4-deflect: 240;
+}
+
+body[data-clr-harmony="analog"] {
+  --hue2-deflect: 30;
+  --hue3-deflect: 60;
+  --hue4-deflect: 90;
+}
+
+body {
+  --auto-hue2: calc(var(--hue) + var(--hue2-deflect, 0));
+  --auto-hue3: calc(var(--hue) + var(--hue3-deflect, 0));
+  --auto-hue4: calc(var(--hue) + var(--hue4-deflect, 0));
+
+  --auto-clr1: hsl(var(--hue), var(--sat), var(--lum));
+  --auto-clr2: hsl(var(--auto-hue2), var(--sat), var(--lum));
+  --auto-clr3: hsl(var(--auto-hue3), var(--sat), var(--lum));
+  --auto-clr4: hsl(var(--auto-hue4), var(--sat), var(--lum));
+}

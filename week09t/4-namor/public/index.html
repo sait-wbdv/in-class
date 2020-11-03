@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Band/Project/Product Name Generator</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script type="module" src="js/app.mjs"></script>
+
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/colour.css">
+  <link rel="stylesheet" href="css/fonts/roboto-cabin.css">
+
+  <style>
+    * {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    
+    body {
+      --lum-super-light: 95%;
+
+      --clr-hbg: hsl(var(--hue), var(--sat-muted), var(--lum-super-light));
+      --clr-h: hsl(var(--auto-hue2), var(--sat), var(--lum-very-dark));
+      --clr-border: hsl(var(--auto-hue4), var(--sat-washed), var(--lum-kinda-light));
+
+      margin: 0;
+      padding: 0 5vmin;
+      min-height: 85vh;
+
+      display: flex;
+
+      font-size: 8vmin; /* Ugh. IE, Safari... Safari!?! */
+      font-size: clamp(5vmin, 8vmin, 64px);
+
+      text-transform: capitalize;
+    }
+    
+    main {
+      display: flex;
+      margin: auto;
+    }
+    
+    h1 {
+      font-variant: small-caps;
+      text-align: center;
+      font-weight: normal;
+      
+      border-color: var(--clr-border);
+      background-color: var(--clr-hbg);
+      color: var(--clr-h);
+      
+      margin: auto;
+      padding: 10vmin;
+
+      border-width: 2vmin;
+      border-style: solid;
+      
+    }
+
+    form {
+      font-size: initial;
+
+      display: flex;
+      align-items: flex-end;
+    }
+
+    fieldset {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    div.wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media screen and (min-width: 960px) {
+      body {
+        min-height: 100vh;
+      }
+    }
+    
+  </style>
+</head>
+<body data-clr-harmony="analog">
+  <main>
+    <h1>[band name]</h1>
+  </main>
+  <template id="hortus">
+    <form class="absolute-child" action="#">
+      <fieldset>
+        <legend>[Harmony]</legend>
+        <div class="wrapper">
+          <label for="mono">
+            <input type="radio" name="harmony" id="mono" value="mono">
+            1 Hue: Monochromatic
+          </label>
+          <label for="comp">
+            <input type="radio" name="harmony" id="comp" value="comp">
+            2 Hues: Complimentary
+          </label>
+          <label for="triadic">
+            <input type="radio" name="harmony" id="triadic" value="triadic">
+            3 Hues: Triadic
+          </label>      
+          <label for="split-comp">
+            <input type="radio" name="harmony" id="split-comp" value="split-comp">
+            3 Hues: Split Complimentary
+          </label>      
+          <label for="tetradic">
+            <input type="radio" name="harmony" id="tetradic" value="tetradic">
+            4 Hues: Tetradic
+          </label>      
+          <label for="analog">
+            <input type="radio" name="harmony" id="analog" value="analog">
+            4 Hues: Analogous
+          </label>
+        </div>
+      </fieldset>
+      <label class="swatch" for="hue">
+        <input type="range" name="hue" id="hue" min="0" max="360">
+      </label>
+    </form>
+  </template>
+</body>
+</html>
