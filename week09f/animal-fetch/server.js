@@ -9,8 +9,11 @@ const app = express();
 // app.use is for using middleware
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Individual Animal pages
+app.get('/animals/:id',function(request, response){});
+
 // JSON GET endpoint
-app.get('/api/v0/gallery', function(request, response){
+app.get('/api/gallery', function(request, response){
   // const animals = [237, 433, 577, 582, 593, 659, 718, 783, 790, 837, 1024, 1025, 1074, 1084];
   response.json(animals);
 });
