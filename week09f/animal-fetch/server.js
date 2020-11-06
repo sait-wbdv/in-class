@@ -10,7 +10,9 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Individual Animal pages
-app.get('/animals/:id',function(request, response){});
+app.get('/gallery/:id',function(request, response){
+  response.send(`<img src="https://picsum.photos/id/${request.params.id}/750" alt="Lorem Picsum Image">`)
+});
 
 // JSON GET endpoint
 app.get('/api/gallery', function(request, response){

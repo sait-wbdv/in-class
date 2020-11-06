@@ -12,7 +12,9 @@ fetch('http://localhost:3000/api/gallery')
 
     animals.forEach(function(animal){
       outputHTML += `
-        <img src="https://picsum.photos/id/${animal}/250" alt="One of Puppy's Frens: ${animal}">
+        <a href="/gallery/${animal}">
+          <img src="https://picsum.photos/id/${animal}/250" alt="One of Puppy's Frens: ${animal}">
+        </a>
       `;
     })
 
