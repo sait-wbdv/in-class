@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Puppy!</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="full-vh center-items">
+    <% animals.forEach(function(animal) { %>
+      <figure>
+        <img src="https://picsum.photos/id/<%=animal.id %>/500" alt="<%=animal.title %>">
+        <figcaption>Hello <%=animal.title %>!</figcaption>
+      </figure>
+    <% }) %>
+  </header>
+  <script src="js/client.js"></script>
+</body>
+</html>
