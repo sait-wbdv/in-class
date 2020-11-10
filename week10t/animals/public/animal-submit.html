@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Submit</title>
+</head>
+<body>
+  <h1>Submit and Animal!</h1>
+  <form action="/animals" method="post">
+    <fieldset>
+      <legend>What's your favourite Lorem Picsum Animal?</legend>
+      <div>
+        <p>
+          <label for="id">Lorem Picsum ID</label>
+          <input type="text" name="id" id="id">
+        </p>
+        <p>
+          <label for="title">Name</label>
+          <input type="text" name="title" id="title">
+        </p>
+        <p>
+          <label for="credit">Photo Credit</label>
+          <input type="text" name="credit" id="credit">
+        </p>
+        <p>
+          <label for="url">Credit URL</label>
+          <input type="text" name="url" id="url">
+        </p>
+        <button type="submit">Add your animal</button>
+      </div>
+    </fieldset>
+  </form>
+</body>
+</html>
