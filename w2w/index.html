@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[page title here]</title>
+  <style>
+    /* Embedded CSS here */
+    /* Notice box and info box */
+    /* TODO: remove notice--info? */
+    .notice {
+      /* box model */
+      margin: 25px auto;
+      padding: 25px 50px;
+      width: 50ch;
+
+      /* colour */
+      border-radius: 15px;
+      background-color: lightgrey;
+      border: 5px solid black;
+    }
+
+    /* red warning box */
+    .notice--warning  {
+      background-color: pink;
+      border-color: red;
+    }
+
+    /* purple pro-tip box */
+    .notice--pro-tip {
+      background-color: skyblue;
+      border-color: rebeccapurple;
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML here -->
+  <section>
+    <p class="notice notice--info"><strong>Notice</strong>: General information will be displayed in boxes such as this one. Warnings will be in red (see below) for information that will help you avoid potential problems.</p>
+
+    <p class="notice notice--warning"><strong>Warning</strong>: There are two flavours of “command line”: Windows and Unix. We will be using the latter: Git Bash (installed along with Git) on Windows and Terminal on Mac (Mac is unix-based so almost any terminal app will do; Tony uses <a href="https://iterm2.com/">iTerm</a>).</p>
+
+    <p class="notice notice--info"><strong>Notice</strong>: Below are <em>Pro-tips</em> that will give you some hints on how the pros do things. In this case, there are some <em>quality of life</em> tips that will reduce the grind if using the command line.</p>
+
+    <p class="notice notice--pro-tip"><strong>CLI Quality of Life Tip #1</strong>: The tab key auto-completes file names and directories.</p>
+
+    <p class="notice notice--pro-tip"><strong>CLI Quality of Life Tip #2</strong>: Use the Up Arrow to browse through the history of last used commands.</p>
+  </section>
+
+</body>
+</html>
