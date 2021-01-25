@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@300&display=swap');
+
+    ul {
+      display: flex;
+      /* justify-content: center; */
+
+      /* justify-content: flex-end; */
+
+      /* justify-content: space-between; */
+
+      /* justify-content: space-around; */
+
+      /* justify-content: space-evenly;     */
+    }
+
+    ul li {
+      flex: auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+    }
+
+    header div {
+      flex: auto;
+    }
+
+    .sait-logo {
+      flex: 0;
+    }
+
+    .site-name {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+
+
+    /* Font */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+    }
+
+
+    .page-header {
+      text-align: center;
+      border-bottom: 1px solid #aaa;
+      padding: 1em;
+      margin-bottom: 2em;
+    }
+
+    img.sait-logo {
+      width: 100px;
+    }
+
+    nav.primary a {
+      display: block;
+      padding: .5rem 1rem;
+      /* border: 1px solid black; */
+
+      text-decoration: none;
+      color: indigo;
+
+      text-align: center;
+      font-variant: small-caps;
+      font-family: sans-serif;
+    }
+
+    nav.primary a:hover {
+      /* background-color: papayawhip; */
+      text-decoration: underline;
+    }
+
+    nav.primary a:active {
+      background-color: indigo;
+      color: white;
+    }
+
+    body > div.wrapper {
+      max-width: 90ch;
+      width: 80vw;
+      margin: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="primary">
+      <ul>
+        <li class="home"><a href="/winter-2021">Home</a></li>
+        <li class="zoom"><a href="https://sait-ca.zoom.us/j/89935602857">Zoom</a></li>
+        <li class="slack"><a href="https://sait-wbdv.slack.com/">Slack</a></li>
+        <li class="bs"><a href="https://learn.sait.ca">Brightspace</a></li>
+        <li class="library"><a href="/winter-2021/library">Library</a></li>
+      </ul>
+    </nav>
+    <header class="page-header">
+      <img class="sait-logo" src="https://sait-wbdv.github.io/winter-2021/assets/images/sait-logo.png" alt="SAIT Logo">
+      <div>
+        <p class="site-name">SAIT WBDV</p>
+        <p class="tagline">Web Developer Fast Track - Winter 2021</p>
+      </div>
+
+    </header>
+  </div>
+</body>
+</html>
