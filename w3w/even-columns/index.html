@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <style>
+    /****************/
+    /* Even Columns */
+    /****************/
+
+    .even-columns {
+      display: flex;
+    }
+    .even-columns > * {
+      flex-basis: 100%;
+    }
+
+
+
+
+
+
+
+
+
+
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
+
+
+    /* Make it pretty */
+    div {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    i {
+      font-size: 75px;
+    }
+
+    section div:nth-child(1) {
+      background: hsl(60deg, 100%, 50%);
+      color: hsl(0deg, 50%, 15%);
+    }
+
+    section div:nth-child(2) {
+      background: hsl(120deg, 100%, 50%);
+      color: hsl(60deg, 50%, 15%);
+    }
+
+    section div:nth-child(3) {
+      background: hsl(210deg, 100%, 50%);
+      color: hsl(150deg, 50%, 12%);
+    }
+
+    section div:nth-child(4) {
+      background: hsl(270deg, 100%, 50%);
+      color: hsl(210deg, 50%, 12%);
+    }
+
+    section div:nth-child(5) {
+      background: hsl(330deg, 100%, 50%);
+      color: hsl(270deg, 50%, 12%);
+    }
+  </style>
+</head>
+<body>
+  <h2>Even Columns</h2>
+  <section class="even-columns">
+    <div><i class="fas fa-user-secret"></i></div>
+    <div><i class="fas fa-hamburger"></i></div>
+    <div><i class="fas fa-umbrella-beach"></i></div>
+    <div><i class="fas fa-cat"></i></div>
+
+  </section>
+
+</body>
+</html>

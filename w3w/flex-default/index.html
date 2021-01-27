@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Item Basics</title>
+
+  <!-- Assets/Dependencies -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <style>
+    /***********/
+    /* Default */
+    /***********/
+
+    .container {
+      display: flex;
+    }
+
+    .one {
+      /* Default flex item */
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto;
+    }
+
+    .two {
+      /* `flex: auto` is shorthand for `flex: 1 1 auto`, or: */
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
+    }
+
+    .three {
+      /* `flex: none` is shorthand for `flex: 0 0 auto`, or: */
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 400px;
+    }
+
+    .umbrella {
+      flex-shrink: 1;
+    }
+
+    .four {
+      /* `flex: <positive-number>` is shorthand for `flex: 1 0px`, or: */
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0px;
+    }
+
+
+
+    .text-box {
+      min-width: 30ch;
+      max-width: 50ch;
+    }
+
+    /*********/
+    /* Reset */
+    /*********/
+    * {
+      box-sizing: border-box;
+    }
+
+
+    /******************/
+    /* Make it pretty */
+    /******************/
+
+    .container {
+      margin: 2rem;
+      gap: 1rem;
+    }
+    .container > * {
+      padding: 2rem;
+      text-align: center;
+    }
+    .empty {
+      padding: 0;
+    }
+
+    i {
+      font-size: 75px;
+    }
+
+    .container div:nth-child(1) {
+      background: hsl(60deg, 100%, 50%);
+      color: hsl(0deg, 50%, 15%);
+    }
+
+    .container div:nth-child(2) {
+      background: hsl(120deg, 100%, 50%);
+      color: hsl(60deg, 50%, 15%);
+    }
+
+    .container div:nth-child(3) {
+      background: hsl(210deg, 100%, 50%);
+      color: hsl(150deg, 50%, 12%);
+    }
+
+    .container div:nth-child(4) {
+      background: hsl(270deg, 100%, 50%);
+      color: hsl(210deg, 50%, 12%);
+    }
+
+    .container div:nth-child(5) {
+      background: hsl(330deg, 100%, 50%);
+      color: hsl(270deg, 50%, 12%);
+    }
+  </style>
+</head>
+<body>
+  <h2>Default</h2>
+  <section class="container">
+    <div class="one"><i class="fas fa-user-secret"></i></div>
+    <div class="two"><i class="fas fa-hamburger"></i></div>
+    <div class="three"><i class="fas fa-umbrella-beach"></i></div>
+    <div class="four"><i class="fas fa-cat"></i></div>
+  </section>
+
+  <section class="container">
+    <div class="one text-box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum necessitatibus, magni quia aliquid ducimus optio eos aliquam dignissimos, tempora eaque sed ad ut quas delectus voluptate enim illo quo. Repudiandae tenetur inventore deleniti ipsa architecto mollitia veniam itaque iusto nihil exercitationem, alias cum tempora unde debitis nisi molestiae magni quas.</i></div>
+    <div class="two"><i class="fas fa-hamburger"></i></div>
+    <div class="three umbrella"><i class="fas fa-umbrella-beach"></i></div>
+    <div class="four empty"></div>
+  </section>
+
+
+
+
+
+
+
+</body>
+</html>
