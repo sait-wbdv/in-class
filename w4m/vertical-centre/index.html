@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Centre</title>
+  <style>
+    .container {
+      border: 5px solid red;
+
+      background-image: url('https://picsum.photos/1500');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      min-height: 100vh;
+      
+      display: flex;
+      
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    .circle {
+      /* make it square */
+      width: 30vmin;
+      height: 30vmin;
+      /* make it visible */
+      background: grey;
+
+      /* make it circular */
+      border-radius: 50%;
+      
+      margin: 5rem;
+      
+    }
+
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- The parent-child relationship of the `container` and `item`s is crucial to how Flexbox operates later. -->
+  <main class="container split-bg">
+    <button class="item circle">Click Me!</button>
+
+  </main>
+
+
+</body>
+</html>

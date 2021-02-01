@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Areas</title>
+  <style>
+    /******************/
+    /* Your Code Here */
+    /******************/
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr;
+      grid-template-areas: 
+        "nav     nav    nav"
+        "......  header ."
+        "sidebar main   ads"
+        "footer  footer footer";
+    }
+
+    @media screen and (max-width: 700px){
+      .container {
+        grid-template-areas: 
+          "nav     nav     nav"
+          ".  header  header"
+          "main    main    ."
+          ". sidebar sidebar"
+          "ads     ads     ."
+          "footer  footer  footer";
+      }
+    }
+
+    .nav {
+      grid-area: nav;
+    }
+
+    .header {
+      grid-area: header;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+    }
+
+    .main {
+      grid-area: main;
+    }
+
+    .ads {
+      grid-area: ads;
+    }
+
+    .footer {
+      grid-area: footer;
+    }
+
+    /*************/
+    /* Side code */
+    /*************/
+
+    /* Reset */
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    /* Make it pretty */
+    body {
+      font-family: Trebuchet MS, Helvetica, sans-serif;
+    }
+
+    div {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    i {
+      font-size: 75px;
+    }
+
+    :root {
+      --sat-bg: 100%;
+      --light-bg: 50%;
+      --sat-text: 50%;
+      --light-text: 12%;
+    }
+
+    .muted {
+      --sat-bg: 70%;
+      --light-bg: 90%;
+      --sat-text: 30%;
+      --light-text: 50%;
+    }
+
+    section div:nth-child(1) {
+      background: hsl(60deg, var(--sat-bg), var(--light-bg));
+      color: hsl(0deg, var(--sat-text), var(--light-text));
+    }
+
+    section div:nth-child(2) {
+      background: hsl(120deg, var(--sat-bg), var(--light-bg));
+      color: hsl(60deg, var(--sat-text), var(--light-text));
+    }
+
+    section div:nth-child(3) {
+      background: hsl(210deg, var(--sat-bg), var(--light-bg));
+      color: hsl(150deg, var(--sat-text), var(--light-text));
+    }
+
+    section div:nth-child(4) {
+      background: hsl(270deg, var(--sat-bg), var(--light-bg));
+      color: hsl(210deg, var(--sat-text), var(--light-text));
+    }
+
+    section div:nth-child(5) {
+      background: hsl(330deg, var(--sat-bg), var(--light-bg));
+      color: hsl(270deg, var(--sat-text), var(--light-text));
+    }
+
+    section div:nth-child(6) {
+      background: hsl(30deg, var(--sat-bg), var(--light-bg));
+      color: hsl(330deg, var(--sat-text), var(--light-text));
+    }
+  </style>
+</head>
+<body>
+  <h2>Flexbox/Grid Starter</h2>
+  <section class="container muted">
+    <div class="nav"><i class="fas fa-user-secret"></i></div>
+    <div class="header"><i class="fas fa-hamburger"></i></div>
+    <div class="sidebar"><i class="fas fa-umbrella-beach"></i></div>
+    <div class="main"><i class="fas fa-blender"></i></div>
+    <div class="ads"><i class="fas fa-fighter-jet"></i></div>
+    <div class="footer"><i class="fas fa-allergies"></i></div>
+  </section>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</body>
+</html>

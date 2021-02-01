@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Definition Slide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@300&display=swap');
+
+    body {
+      font-size: 34px;
+      font-size: clamp(20px, 5vw, 48px);
+      margin: 0;
+      color: black;
+    }
+
+    main {
+      display: flex;
+      min-height: 100vh;
+
+      align-items: center;
+      justify-content: center;
+
+      background-color: rebeccapurple;
+      background-image: url('https://picsum.photos/1500');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      background-blend-mode: hard-light;
+
+    }
+
+    dl {
+      padding: 1em;
+      max-width: 50ch;
+      margin: 2em;
+
+      background-color: rgb(255,255,255,.4);
+
+      border-radius: 2em;
+
+      backdrop-filter: blur(5px);
+    }
+
+    dt {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    dd {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+
+      font-style: italic;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <dl>
+      <dt>Command Line Interface (CLI)</dt>
+      <dd>An alternative to Graphical User Interfaces (GUI) that are based on mouse clicks. Terminal apps come in a few flavours; in this course you can use a unix terminal of your choice.</dd>
+    </dl>
+  </main>
+</body>
+</html>
