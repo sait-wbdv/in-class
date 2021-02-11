@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Filter Experiments</title>
+  <style>
+    img {
+     filter: url('#filter');
+    }
+    h1 {
+      font-size: 78px;
+      filter: url('#extrude');
+      color: rebeccapurple;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lucifer the Puppy</h1>
+  <img src="https://picsum.photos/id/237/1500/1500" alt="Lucifer">
+  <svg>
+    <filter id="filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+      <feColorMatrix type="saturate" values="5" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" result="colormatrix"/>
+      <feDropShadow stdDeviation="5 5" in="colormatrix" dx="10" dy="10" flood-color="#1F3646" flood-opacity="0.3" x="0%" y="0%" width="100%" height="100%" result="dropShadow"/>
+      <feGaussianBlur stdDeviation="0 7" x="0%" y="0%" width="100%" height="100%" in="dropShadow" edgeMode="none" result="blur"/>
+    </filter>
+  </svg>
+  <svg>
+    <defs>
+      <filter id="text-effect" filterUnits="userSpaceOnUse">
+        <!-- COLORS -->
+          <feFlood flood-color="#663300" result="COLOR-red" />‚
+          <feFlood flood-color="#D7A500" result="COLOR-y" />
+        <!-- COLORS END -->
+
+        <!-- STRIPE FILL -->
+            <feImage xlink:href="data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.1%22%20id%3D%22Untitled-Seite_x25_201%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2210px%22%20height%3D%224px%22%3E%0A%3Crect%20fill%3D%22%239F6B00%22%20width%3D%2210%22%20height%3D%222%22%2F%3E%3C%2Fsvg%3E" x="0" y="0" width="10" height="4" result="STRIPE FILL_10"/>
+          <feTile in="STRIPE FILL_10" result="STRIPE FILL_20"/>
+          <feComposite operator="in" in="STRIPE FILL_20" in2="SourceAlpha" result="STRIPE FILL_30"/>
+        <!-- STRIPE FILL END -->
+
+        <!-- THIN BEVEL -->
+          <feMorphology operator="dilate" radius="2" in="SourceAlpha" result="THIN-BEVEL_10" />
+          <feComposite operator="out" in="THIN-BEVEL_10" in2="SourceAlpha" result="THIN-BEVEL_20"/>
+          <feComposite operator="in" in="COLOR-y" in2="THIN-BEVEL_20" result="THIN-BEVEL_30" />
+        <!-- THIN BEVEL END -->
+
+        <!-- OUTER BEVEL -->
+        <feConvolveMatrix order="8,8" divisor="1"
+          kernelMatrix="1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 " in="SourceGraphic" result="OUTER-BEVEL_10" />
+          <feOffset dx="4" dy="4" in="OUTER-BEVEL_10" result="OUTER-BEVEL_20"/>
+          <feComposite operator="in" in="COLOR-red" in2="OUTER-BEVEL_20" result="OUTER-BEVEL_30" />
+         <!-- OUTER BEVEL END -->
+
+        <!-- INNER BEVEL -->
+          <feOffset in="SourceAlpha" dx="4" dy="4" result="INNER-BEVEL_10"/>
+          <feComposite operator="out" in="SourceAlpha" in2="INNER-BEVEL_10" result="INNER-BEVEL_20" />
+          <feComposite in="COLOR-red" operator="in" in2="INNER-BEVEL_20" result="INNER-BEVEL_30" />
+        <!--  INNER BEVEL END -->
+
+        <!-- FAT OUTLINE -->
+          <feMorphology operator="dilate" radius="6" in="OUTER-BEVEL_30" result="FAT-OUTLINE_10" />
+          <feComposite operator="in" in="COLOR-y" in2="FAT-OUTLINE_10" result="FAT-OUTLINE_20" />
+        <!-- FAT OUTLINE END -->
+
+          <feMerge  result="merge2">
+            <feMergeNode in="FAT-OUTLINE_20" />
+            <feMergeNode in="OUTER-BEVEL_30" />
+            <feMergeNode in="STRIPE FILL_30" />
+            <feMergeNode in="INNER-BEVEL_30" />
+            <feMergeNode in="THIN-BEVEL_30" />
+          </feMerge>
+        </filter>
+    </defs>
+  </svg>
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <filter id="extrude">
+        
+        <feMorphology operator="erode" radius="0" in="SourceGraphic" result="erode" />
+        <feMorphology operator="erode" radius="2" in="SourceGraphic" result="erode1" />
+        <feMorphology operator="erode" radius="3" in="SourceGraphic" result="erode2" />
+        <feMorphology operator="erode" radius="4" in="SourceGraphic" result="erode3" />
+        <feMorphology operator="erode" radius="6" in="SourceGraphic" result="erode4" />
+         <feComposite in="erode" in2="erode1" operator="out" result="main"/> 
+        <feComposite in="erode1" in2="erode2" operator="out" result="stroke1"/>
+        <feComposite in="erode2" in2="erode3" operator="out" result="stroke2"/>
+        <feComposite in="erode3" in2="erode4" operator="out" result="stroke3"/>
+        <feGaussianBlur in="stroke1" stdDeviation="0 10" result="stroke1-blur" />
+        <feBlend in="stroke1-blur" mode="screen" result="stroke1-blur-blend"></feBlend>
+        <feGaussianBlur in="stroke2" stdDeviation="0 10"  />
+        <feOffset dx="0" dy="10" result="stroke2-blur"/>
+        <feBlend in="stroke2-blur" mode="screen" result="stroke2-blur-blend"></feBlend>
+        <feGaussianBlur in="stroke3" stdDeviation="0 25"  />
+        <feOffset dx="0" dy="20" result="stroke3-blur"/>
+        <feBlend in="stroke3-blur" mode="screen" result="stroke3-blur-blend"></feBlend>
+        
+        <feFlood result="floodFill" flood-color="rgba(0,0,0,0.7)" flood-opacity="1"/>
+        <feComposite in="floodFill" in2="erode2" operator="in" result="black"/> 
+        <feBlend in="black" mode="screen" result="letterInside"></feBlend>
+        <feMerge>
+          <feMergeNode in="stroke1-blur-blend"></feMergeNode>
+          <feMergeNode in="stroke2-blur-blend"></feMergeNode>
+        <feMergeNode in="stroke3-blur-blend"></feMergeNode>
+          <feMergeNode in="main"></feMergeNode>
+          <feMergeNode in="letterInside"></feMergeNode>
+        </feMerge>
+        
+      </filter>
+      <filter id="extrude1">
+        
+        <feOffset dx="1" dy="3" in="SourceGraphic" result="L1"/>
+        <feMorphology operator="erode" radius="1" in="L1" result="L2" />
+        <feOffset dx="1" dy="10" in="L2" result="L3"/>
+  
+   
+        <feMerge result="trail">
+          <feMergeNode in="L1" />
+          <feMergeNode in="L3" />
+        </feMerge>
+        <feGaussianBlur in="trail" stdDeviation="3 0" result="trail-blur" />
+        <feMerge>
+          <feMergeNode in="trail-blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+    </filter>
+    </defs>
+  </svg>
+</body>
+</html>

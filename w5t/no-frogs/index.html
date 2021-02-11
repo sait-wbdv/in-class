@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No Frogs</title>
+  <style>
+    .frog-top {
+      fill:rebeccapurple;
+      transform: skew(10deg, 10deg);
+    }
+
+    .frog-bottom {
+      fill:firebrick;
+      filter: blur(20px);
+    }
+
+    .ban {
+      fill:darkgoldenrod;
+      stroke: red;
+      stroke-width: 10px;
+      filter: opacity(.3);
+    }
+</style>
+</head>
+<body>
+  <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#000">
+      <path class="frog-top" fill-rule="evenodd" clip-rule="evenodd" d="M370.1 222.2l-58 32.6-97-97c9.6-2.8 19.4-4.8 29.5-5.7a39 39 0 0176.8 0s28.5 9.3 48.4 20.1a28.6 28.6 0 01.3 50zm-87-51.3a11.7 11.7 0 110-23.5 11.7 11.7 0 010 23.5z"/>
+      <path class="frog-bottom" d="M103.2 308.5c-.1-42 16.3-80.2 43-108.4l38.6 38.6-8.1 6.1a7.9 7.9 0 00-1.6 11 7.8 7.8 0 0011 1.6l10-7.5 51.2 51.2-11 14.8H262l23.2 23.2c-.7.2-1.4.3-2.2.3H134.5c-17 0-31.2-13.8-31.3-30.9z"/>
+      <path class="ban" fill-rule="evenodd" clip-rule="evenodd" d="M21 249.5a229.5 229.5 0 11459 0 229.5 229.5 0 01-459 0zm369 97.7A170.3 170.3 0 00152.8 110L390 347.2zM111 151.8A170.3 170.3 0 00348.2 389L111 151.8z"/>
+    </g>
+  </svg>
+   
+</body>
+</html>
