@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body, input, select, button {
+      font-size: 36px;
+    }
+    option {
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Result: <span>0</span></h1>
+  <form id="adding-machine" action="#something">
+    <fieldset>
+      <legend>Enter two numbers to add:</legend>
+      <div class="wrapper">
+        <div>
+          <label for="num1">First Number</label>
+          <input type="number" name="num1" id="num1" placeholder="Num 1" step=".01" required>
+        </div>
+        <div>
+          <label for="num2">Second Number</label>
+          <input type="number" name="num2" id="num2" placeholder="Num 2" step=".01" required>
+        </div>
+        <div>
+          <label for="operator">Operator</label>
+          <select name="operator" id="operator">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit">Add</button>
+    </fieldset>
+  </form>
+  <script>
+    // Create a variable for the form
+    const form = document.querySelector('form');
+    const output = document.querySelector('span');
+
+    // Add `submit` event listener
+    form.addEventListener('submit', function(event){
+
+      // Prevent the form from submitting
+      event.preventDefault();
+
+      // Add num1 and num2 and assign it to a result
+      const num1 = parseFloat(form.num1.value);
+      const num2 = parseFloat(form.num2.value);
+      const operator = form.operator.value;
+      let result;
+
+      if (operator === 'add') {
+        // Add
+        result = num1 + num2;
+      } else if(operator === 'subtract') {
+
+        // Subtract
+        result = num1 - num2;
+
+      } else if(operator === 'multiply') {
+
+        // Multiply
+        result = num1 * num2;
+
+      } else if(operator === 'divide') {
+
+        // Divide
+        result = num1 / num2;
+
+      } else {
+
+        result = 'Invalid!';
+
+      }
+
+      // console.log the result
+      output.innerHTML = result;
+
+    });
+
+
+  </script>
+</body>
+</html>
