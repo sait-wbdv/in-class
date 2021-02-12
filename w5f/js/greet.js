@@ -23,7 +23,7 @@ if (typeof salutation === 'undefined') {
   protocol = 'battle';
 } 
 
-
+// Greet our guest
 if(protocol === 'formal') {
 
   // Formal greeting
