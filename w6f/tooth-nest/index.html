@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silly Example: Tooth Nest</title>
+  <!-- <script src="../js/review.js" defer></script> -->
+</head>
+<body>
+  <h1>Tooth Nest</h1>
+  <p class="message">[message]</p>
+  <script>
+    const toothNest = {
+      size: 'gigantic',
+      price: 19.99,
+      colour: 'rebeccapurple',
+      inventory: 1,
+      available: false
+    }
+
+    let message = `The "Tooth Nest"! Available 'now' for only $${toothNest.price}.`;
+
+    if (!toothNest.available) {
+      message = `Tooth Nest is not available. You could have had it for $${toothNest.price}, but you missed out.`;
+    }
+
+    const p = document.querySelector('.message');
+    p.innerHTML = message;
+
+  </script>
+</body>
+</html>
