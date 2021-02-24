@@ -20,6 +20,7 @@ const tipCalc = function(total = 0, rate = .18){
   const tipTotal = total * rate;
 
   return tipTotal;
+  
 }
 
 const tip = `$${tipCalc(billTotal,tipRate).toFixed(0)}`;

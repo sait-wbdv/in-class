@@ -1,5 +1,8 @@
 
-const greeter = function(name = 'Captain Anonymous', lang){
+const greeter = function(name, lang){
+
+  // Allow zero as a name.
+  name = name ?? 'Captain Anonymoose';
 
   if (lang === 'es') {
 
@@ -20,4 +23,4 @@ const greeter = function(name = 'Captain Anonymous', lang){
   }
 }
 
-console.log(greeter('Tony'));
+console.log(greeter(0));
