@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test: Nested Form</title>
+</head>
+<body>
+  <form id="form" action="#">
+    <fieldset>
+      <label for="@input1">Input 1</label>
+      <input data-form="iterable" type="text" name="input1" id="@input1">
+    </fieldset>
+    <fieldset>
+      <label for="input2">Input 2</label>
+      <input type="text" name="input2" id="input2">
+    </fieldset>
+  </form>
+  <script>
+    const inputs = document.querySelectorAll('input, select, textarea');
+    inputs.forEach(() => {
+      console.log('looped');
+    });
+  </script>
+</body>
+</html>
