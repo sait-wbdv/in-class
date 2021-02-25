@@ -86,23 +86,6 @@ const definitions = [
   }
 ];
 
-/**********************************/
-/* Easy output: Element.innerHTML */
-/**********************************/
-
-// let output = '<dl>\n';
-
-// definitions.forEach(function(definition){
-  // output += `
-  //   <dt>${definition.term}</dt>
-  //   <dd>${definition.definition}</dd>\n`;
-// });
-
-// output += '</dl>';
-
-// document.querySelector('main').innerHTML = output;
-
-
 /***********************************************************/
 /* Fancy output: template fragment. See <template> in HTML */
 /***********************************************************/
