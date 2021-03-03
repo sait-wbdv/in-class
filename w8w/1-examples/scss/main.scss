@@ -1,0 +1,155 @@
+/*****************/
+/* Sass Comments */
+/*****************/
+
+// This comment is removed from compiled code
+
+/*************/
+/* Variables */
+/*************/
+
+$main-fonts: Arial, sans-serif;
+$headings-color: skyblue;
+
+h1 {
+  font-family: $main-fonts;
+  color: $headings-color;
+}
+
+/*************************/
+/* Variables as selector */
+/*************************/
+
+$header-base-class: '.header';
+
+#{$header-base-class} {
+  background: white;
+}
+
+/****************/
+/* Nested Rules */
+/****************/
+
+nav {
+  background-color: rebeccapurple;
+
+  ul {
+    list-style: none;
+
+    a {
+      padding: 1rem;
+      color: white;
+    }
+  }
+}
+
+
+/********************/
+/* Nested Selectors */
+/********************/
+
+.highlight {
+  &:hover {
+    color: purple;
+  }
+  &.dark {
+    &:hover {
+      color: pink;
+    }
+  }
+}
+
+/**********/
+/* Mixins */
+/**********/
+
+@mixin small-type {
+  font-size: .75rem;
+  font-weight: 300;
+  letter-spacing: .01em;
+  line-height: 1;
+}
+
+footer {
+  @include small-type;
+}
+
+.small {
+  @include small-type;
+}
+
+/************************/
+/* Mixin with arguments */
+/************************/
+
+@mixin box-shadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+
+div {
+  @include box-shadow(0px, 0px, 4px, #fff);
+}
+
+@mixin grid-3-col($col1, $col2, $col3) {
+  display: grid;
+  grid-template-columns: $col1, $col2,$col3; 
+}
+
+.wrapper {
+  @include grid-3-col(min-max(250px, 1fr), 35ch, 0px);
+}
+
+/*************/
+/* Functions */
+/*************/
+
+@function remCalc($size, $base) {
+  $remSize: $size / $base;
+  @return #{$remSize}rem;
+}
+
+a {
+  font-size: remCalc(24, 18);
+}
+
+/****************/
+/* Conditionals */
+/****************/
+
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  }
+  @else if $val == warning {
+    color: yellow;
+  }
+  @else if $val == success {
+    color: green;
+  }
+  @else {
+    color: black;
+  }
+}
+
+p {
+  font-size: 18px;
+  @include text-effect(success);
+}
+
+
+/***************/
+/* Inheritance */
+/***************/
+
+.panel{
+  background-color: red;
+  height: 70px;
+}
+.big-panel{
+  @extend .panel;  
+  width: 150px;
+  font-size: 2em;
+}

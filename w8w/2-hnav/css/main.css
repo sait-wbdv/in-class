@@ -1,0 +1,38 @@
+/* Remove default list padding */
+nav ul {
+  padding: 0;
+  background-color: white;
+  border: 1px solid black;
+}
+
+nav li {
+  list-style: none;
+  border: 1px solid black;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+  color: #26004d;
+}
+
+nav a:hover {
+  background-color: #26004d;
+  color: #f7f0ff;
+}
+
+nav a:active {
+  background-color: grey;
+  color: white;
+}
+
+body {
+  background-color: lightgrey;
+  margin: auto 10vw;
+  font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 36px;
+}
