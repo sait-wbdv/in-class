@@ -1,0 +1,72 @@
+// Doesn't work with Live Sass Compiler --> dependency hell
+// @use "src/corners";
+
+// .button {
+//   @include corners.rounded;
+//   padding: 5px + corners.$radius;
+// }
+
+$light: 80%;
+$super-light: 97%;
+$dark: 15%;
+
+$hue1: 270deg;
+$hue2: 90deg;
+
+$brand-clr-1: hsl($hue1, 100%, $dark);
+
+$primary-nav-class: 'nav';
+
+/* Remove default list padding */
+#{$primary-nav-class} {
+  ul {
+    padding: 0;
+    background-color: white;
+    border: 1px solid black;
+  }
+  li {
+    list-style: none;
+    border: 1px solid black;
+    text-align: center;
+  }
+  a {
+    display: block;
+    padding: 0.5em;   
+    text-decoration: none;
+    color: $brand-clr-1;
+
+    &:hover {
+      background-color: hsl($hue1, 100%, $dark);
+      color: hsl($hue1, 100%, $super-light);
+    }
+    &:active {
+      background-color: grey;
+      color: white;
+    }
+  }
+}
+
+
+
+
+
+
+body {
+  
+  background-color: lightgrey;
+  margin: auto 10vw;
+
+  font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+
+nav ul {
+
+}
+
+nav ul li {
+
+}
